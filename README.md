@@ -1046,6 +1046,27 @@ colorbar
 - Generate the first 20 Fibonacci numbers using loop and then display the vector as bar plot.
 - Print the table of a random number (*between 5 and 15*), using loops. Like `13 * 1 = 13` [...] `13 * 10 = 130`.
 
+**Also, try and encode these (word problems)[https://themathpage.com/Alg/word-problems.htm]:**
+- Jane spent $42 for shoes.  This was $14 less than twice what she spent for a blouse.  How much was the blouse?
+- There are b boys in the class.  This is three more than four times the number of girls.  How many girls are in the class?
+- The sum of two numbers is 84, and one of them is 12 more than the other.  What are the two numbers?
+- The sum of two consecutive numbers is 37.  What are they?
+- One number is 10 more than another.  The sum of twice the smaller plus three times the larger, is 55.  What are the two numbers?
+- Divide $80 among three people so that the second will have twice as much as the first, and the third will have $5 less than the second.
+- The sum of two consecutive odd numbers is 52.  What are the two odd numbers?
+- Julie has $50, which is eight dollars more than twice what John has.  How much has John?
+- Carlotta spent $35 at the market.  This was seven dollars less than three times what she spent at the bookstore; how much did she spend there?
+- There are b black marbles.  This is four more than twice the number of red marbles.  How many red marbles are there?
+- Janet spent $100 on books.  This was k dollars less than five times what she spent on lunch.  How much did she spend on lunch?
+- The sum of two numbers is 99, and one of them is 17 more than the other.  What are the two numbers?
+- A class of 50 students is divided into two groups; one group has eight less than the other; how many are in each group?
+- The sum of two numbers is 72, and one of them is five times the other; what are the two numbers?
+- The sum of three consecutive numbers is 87; what are they?
+- A group of 266 persons consists of men, women, and children.  There are four times as many men as children, and twice as many women as children.  How many of each are there?
+- Divide $79 among three people so that the second will have three times more than the first, and the third will have two dollars more than the second.
+- Divide $15.20 among three people so that the second will have one dollar more than the first, and the third will have $2.70 more than the second.
+- Two consecutive odd numbers are such that three times the first is 5 more than twice the second.  What are those two odd numbers?
+
 Also, try out **MATLAB's [GPS receiver simulation model](https://se.mathworks.com/help/nav/ref/gpssensor-system-object.html).**
 Or, run this `openExample('shared_positioning/GenerateGPSPositionMeasurementsFromStationaryInputExample')` in the **Command Window**.
 
