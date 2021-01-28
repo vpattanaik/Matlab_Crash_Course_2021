@@ -1046,7 +1046,7 @@ colorbar
 - Generate the first 20 Fibonacci numbers using loop and then display the vector as bar plot.
 - Print the table of a random number (*between 5 and 15*), using loops. Like `13 * 1 = 13` [...] `13 * 10 = 130`.
 
-**Also, try and encode these (word problems)[https://themathpage.com/Alg/word-problems.htm]:**
+**Also, try and encode these [word problems](https://themathpage.com/Alg/word-problems.htm):**
 - Jane spent $42 for shoes.  This was $14 less than twice what she spent for a blouse.  How much was the blouse?
 - There are b boys in the class.  This is three more than four times the number of girls.  How many girls are in the class?
 - The sum of two numbers is 84, and one of them is 12 more than the other.  What are the two numbers?
