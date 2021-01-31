@@ -1297,7 +1297,7 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 - Generate the first 20 Fibonacci numbers using loop and then display the vector as bar plot.
 - Print the table of a random number (*between 5 and 15*), using loops. Like `13 * 1 = 13` [...] `13 * 10 = 130`.
 
-**Also, try and encode these [word problems](https://themathpage.com/Alg/word-problems.htm):**
+**Encode these [word problems](https://themathpage.com/Alg/word-problems.htm):**
 - Jane spent $42 for shoes.  This was $14 less than twice what she spent for a blouse.  How much was the blouse?
 - There are b boys in the class.  This is three more than four times the number of girls.  How many girls are in the class?
 - The sum of two numbers is 84, and one of them is 12 more than the other.  What are the two numbers?
@@ -1317,6 +1317,135 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 - Divide $79 among three people so that the second will have three times more than the first, and the third will have two dollars more than the second.
 - Divide $15.20 among three people so that the second will have one dollar more than the first, and the third will have $2.70 more than the second.
 - Two consecutive odd numbers are such that three times the first is 5 more than twice the second.  What are those two odd numbers?
+
+**Try to encode the following equations:**
+
+- Initial Velocity
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{u}_\text{x}%20=%20\text{u}%20\cdot%20\cos\theta&mode=inline">
+     <br/>
+     <img src="https://render.githubusercontent.com/render/math?math=\text{u}_\text{y}%20=%20\text{u}%20\cdot%20\sin\theta&mode=inline">
+
+- Time of Flight
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{T}=\frac{2%20\cdot%20\text{u}_\text{y}}{\text{g}}&mode=inline">
+
+- Velocity
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{u}_\text{x}%20=%20\text{u}%20\cdot%20\cos{\theta}&mode=inline">
+     <br/>
+     <img src="https://render.githubusercontent.com/render/math?math=\text{u}_\text{y}%20=%20\text{u}%20\cdot%20\sin%20{\theta}%20-%20\text{g}%20\cdot%20\text{t}&mode=inline">
+
+- Pythagorean Theorem
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{u}=\sqrt{\text{u}_\text{x}^2+\text{u}_\text{y}^2}&mode=inline">
+
+- Displacement
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{x}=\text{u}%20\cdot%20\text{t}%20\cdot%20\cos\theta&mode=inline">
+     <br/>
+     <img src="https://render.githubusercontent.com/render/math?math=\text{y}=\text{u}%20\cdot%20\text{t}%20\cdot%20\sin\theta-\frac1%202\text{gt}^2&mode=inline">
+     <br/>
+     <img src="https://render.githubusercontent.com/render/math?math=\Delta%20\text{r}=\sqrt{\text{x}^2%2B\text{y}^2}&mode=inline">
+
+- Parabolic Trajectory
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{y}=\tan\theta%20\cdot%20\text{x}-\frac{\text{g}}{2%20\cdot%20\text{u}^2%20\cdot%20\cos^2\theta}%20\cdot%20\text{x}^2&mode=inline">
+
+- Maximum Height
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{h}=\frac{\text{u}^2%20\cdot%20\sin^2\theta}{2\cdot%20\text{g}}&mode=inline">
+     <br/>
+     <img src="https://render.githubusercontent.com/render/math?math=\text{t}_\text{h}=\frac{\text{u}%20\cdot%20\sin\theta}{\text{g}}&mode=inline">
+
+     *where <img src="https://render.githubusercontent.com/render/math?math=\text{t}_\text{h}&mode=inline"> stands for the time it takes to reach maximum height.*
+
+- Range
+
+     <img src="https://render.githubusercontent.com/render/math?math=\text{R}=\frac{\text{u}^2%20\cdot%20\sin2\theta}{\text{g}}&mode=inline">
+
+     <br/><br/>
+
+- Sound velocity in water - [Del Grosso and Mader (1972)](https://www.sciencedirect.com/science/article/abs/pii/S030156299800091X)
+
+     ![equation](https://latex.codecogs.com/gif.latex?c%20%3D%20a_%7B0%7D%20&plus;%20a_%7B1%7D%20%5Ccdot%20T%20&plus;%20a_%7B2%7D%20%5Ccdot%20T%5E%7B2%7D%20&plus;%20a_%7B3%7D%20%5Ccdot%20T%5E%7B3%7D%20&plus;%20a_%7B4%7D%20%5Ccdot%20T%5E%7B4%7D%20&plus;%20a_%7B5%7D%20%5Ccdot%20T%5E%7B5%7D)
+
+     *c = sound velocity [m s<sup>-1</sup>]*
+
+     *T = Temperature*
+
+     *a<sub>0</sub> ... a<sub>5</sub> = Coefficients*
+
+     *List of coefficients (a<sub>0</sub> ... a<sub>5</sub>) from literature*
+
+     | Reference | a<sub>0</sub> | a<sub>1</sub> | 10<sup>2</sup> . a<sub>2</sub> | 10<sup>4</sup> . a<sub>3</sub> | 10<sup>6</sup> . a<sub>4</sub> | 10<sup>9</sup> . a<sub>5</sub> | Max error (m s<sup>-1</sup>) | Temp. range (C) |
+     |---|---|---|---|---|---|---|---|---|
+     | Del Grosso and Mader (1972) | 1402.388 | 5.03711 | 25.80852 | 3.3420 | 21.4780 | 3.146 | 0.002 | 0–100 |
+     | Wilson (1959) | 1403.013 | 5.02476 | 25.69215 | 2.8874 | 20.8249 | 0. | 0.01 | 0–100 |
+     | Greenspan and Tschiegg (1959) | 1402.736 | 5.03358 | 25.79506 | 3.3164 | 21.4526 | 3.045 | 0.01 | 0–100 |
+     | AIUM (1995) | 1403.0 | 5.0 | 26.0 | 3.0 | 0. | 0. | 2.7 | 0–50 |
+
+     **Simplified Equation:**
+
+     ![equation](https://latex.codecogs.com/gif.latex?c%20%3D%201404.3&plus;4.7T-0.04T%5E2)
+
+- [Mackenzie Equation (1981)](http://resource.npl.co.uk/acoustics/techguides/soundseawater/refs.html#7)
+
+     ![equation](https://latex.codecogs.com/gif.latex?c%28D%2CS%2CT%29%20%3D%20%5Ctextsuperscript%7B%7D%201448.96%20&plus;%204.591T%20-%205.304%20x%2010%5Ctextsuperscript%7B-2%7DT%5Ctextsuperscript%7B2%7D%20&plus;%202.374%20x%2010%5Ctextsuperscript%7B-4%7DT%5Ctextsuperscript%7B3%7D%20&plus;%201.340%20%28S-35%29%20&plus;%201.630%20x%2010%5Ctextsuperscript%7B-2%7DD%20&plus;%201.675%20x%2010%5Ctextsuperscript%7B-7%7DD%5Ctextsuperscript%7B2%7D%20-%201.025%20x%2010%5Ctextsuperscript%7B-2%7DT%28S%20-%2035%29%20-%207.139%20x%2010%5Ctextsuperscript%7B-13%7DTD%5Ctextsuperscript%7B3%7D)
+
+     *T = temperature in degrees Celsius*
+
+     *S = salinity in parts per thousand*
+
+     *D = depth in metres*
+
+     *Range of validity: temperature 2 to 30 °C, salinity 25 to 40 parts per thousand, depth 0 to 8000 m*
+
+- [Coppens Equation (1981)](http://resource.npl.co.uk/acoustics/techguides/soundseawater/refs.html#2)
+
+     ![equation](https://latex.codecogs.com/gif.latex?c%28D%2CS%2Ct%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%20c%280%2CS%2Ct%29%20&plus;%20%2816.23%20&plus;%200.253t%29D%20&plus;%20%280.213-0.1t%29D%5Ctextsuperscript%7B2%7D%20&plus;%20%7B%5B%7D0.016%20&plus;%200.0002%28S-35%29%7B%5D%7D%28S%20-%2035%29tD)
+
+     ![equation](https://latex.codecogs.com/gif.latex?c%280%2CS%2Ct%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%201449.05%20&plus;%2045.7t%20-%205.21t%5Ctextsuperscript%7B2%7D%20&plus;%200.23t%5Ctextsuperscript%7B3%7D%20&plus;%20%281.333%20-%200.126t%20&plus;%200.009t%5Ctextsuperscript%7B2%7D%29%28S%20-%2035%29)
+
+     *t = T/10 where T = temperature in degrees Celsius*
+
+     *S = salinity in parts per thousand*
+
+     *D = depth in kilometres*
+
+     *Range of validity: temperature 0 to 35 °C, salinity 0 to 45 parts per thousand, depth 0 to 4000 m*
+
+- Conversion of pressure into depth - [Leroy and Parthiot (1998)](http://resource.npl.co.uk/acoustics/techguides/soundseawater/refs.html#6)
+
+     ![equation](https://latex.codecogs.com/gif.latex?Z%5Ctextsubscript%7BS%7D%28P%2CQ%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.72659%20x%2010%5Ctextsuperscript%7B2%7DP%20-%202.2512%20x%2010%5Ctextsuperscript%7B-1%7D%20P%5Ctextsuperscript%7B2%7D%20&plus;%202.279%20x%2010%5Ctextsuperscript%7B-4%7D%20P%5Ctextsuperscript%7B3%7D%20-%201.82%20x%2010%5Ctextsuperscript%7B-7%7D%20P%5Ctextsuperscript%7B4%7D%20g%28Q%29%20&plus;%201.092%20x%2010%5Ctextsuperscript%7B-4%7D%20P)
+
+     *Where g(Q), the international formula for gravity, is given by:*
+
+     *Z = depth in metres*
+
+     *P = pressure in MPa (relative to atmospheric pressure)*
+
+     *Q = latitude*
+
+- Conversion of depth into pressure - [Leroy and Parthiot (1998)](http://resource.npl.co.uk/acoustics/techguides/soundseawater/refs.html#6)
+
+     ![equation](https://latex.codecogs.com/gif.latex?P%28Z%2CQ%29%20%3D%20h%28Z%2CQ%29%20-%20Th%5Ctextsubscript%7B0%7DZ)
+
+     ![equation](https://latex.codecogs.com/gif.latex?h%28Z%2C45%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%201.00818%20x%2010%5Ctextsuperscript%7B-2%7D%20Z%20&plus;%202.465%20x%2010%5Ctextsuperscript%7B-8%7DZ%5Ctextsuperscript%7B2%7D%20-%201.25%20x%2010%5Ctextsuperscript%7B-13%7DZ%5Ctextsuperscript%7B3%7D%20&plus;%202.8%20x%2010%5Ctextsuperscript%7B-19%7DZ%5Ctextsuperscript%7B4%7D)
+
+     ![equation](https://latex.codecogs.com/gif.latex?k%28Z%2CQ%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%20%28g%28Q%29%20-%202%20x%2010%5Ctextsuperscript%7B-5%7DZ%29%5Ctextbf%7B/%7D%289.80612%20-%202%20x%2010%5Ctextsuperscript%7B-5%7DZ%29)
+
+     ![equation](https://latex.codecogs.com/gif.latex?g%28Q%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.7803%281%20&plus;%205.3%20x%2010%5Ctextsuperscript%7B-3%7D%20sin%5Ctextsuperscript%7B2%7DQ%29)
+
+     ![equation](https://latex.codecogs.com/gif.latex?Th%5Ctextsubscript%7B0%7DZ%20%3D%201.0x10%5Ctextsuperscript%7B-2%7D%20Z/%28Z&plus;100%29%20&plus;%206.2x10%5Ctextsuperscript%7B-6%7D%20Z)
+
+     *Z = depth in metres*
+
+     *h = pressure in MPa (relative to atmospheric pressure)*
+
+     *Q = latitude*
+
+     *In the above equation, P (=h(Z,Q)) would apply to the oceanographers' standard ocean, defined as an ideal medium with a temperature of 0 °C and salinity of 35 parts per thousand.*
 
 Also, try out **MATLAB's [GPS receiver simulation model](https://se.mathworks.com/help/nav/ref/gpssensor-system-object.html).**
 Or, run this `openExample('shared_positioning/GenerateGPSPositionMeasurementsFromStationaryInputExample')` in the **Command Window**.
