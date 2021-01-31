@@ -1126,7 +1126,9 @@ plot(1:data_count, T_first.Pressure)
 hold on % Retain current plot when adding new plots
 plot(1:data_count, T_first.Temperature)
 legend('Pressure','Temperature') % Adds legend to figure
+legend('Location','southeast') % Moves lend to specific location with respect to axes
 title('Variation of Water Temperature with Depth') % Adds title to figure
+set(gca, 'Ydir', 'reverse') % Reverse the orientation of Y-Axis
 hold off % Stops retaining current plot
 ```
 
@@ -1247,7 +1249,7 @@ colorbar % Shows color scale using a colorbar
 
 ### Plotting Longitudes - Latitudes on Maps
 
-The following example visualizes the locations of post offices in Tallinn, Estonia.
+The following example visualizes locations in Tallinn, Estonia.
 
 ```matlab
 %% Clearing previous session
@@ -1256,7 +1258,7 @@ clear % Remove all variables from workspace
 close all % Closes all figures
 
 %% Importing CSV file
-csv_file = 'data_files\baltic_post_office_locations.csv'; % CSV file path
+csv_file = 'data_files\baltic_locations.csv'; % CSV file path
 csv_data = readtable(csv_file); % Creates table from CSV file
 
 %% Selecting specific columns from MATLAB table
