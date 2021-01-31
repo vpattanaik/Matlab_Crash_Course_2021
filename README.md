@@ -20,50 +20,6 @@ Now type `A = 1` in the *m*-file inside the **Editor** panel, go to **EDITOR** -
 
 ![MATLAB Illustration](/images/desktop_illustration.png)
 
-### Adding Comments to Script
-To add comments to MATLAB code, use the *%* (percent) symbol. Comment lines can appear anywhere in a program file, also at the end of a line of code. Like so,
-
-```matlab
-% Add up all the vector elements.
-y = sum(x) % Use the sum function.
-```
-
-To comment out multiple lines of code, use the block comment operators, *%{* and *%}*. The *%{* and *%}* (percent symbol with curly braces) operators must appear alone on the lines that immediately precede and follow the block of help text. Do not include any other text on these lines.
-
-```matlab
-a = magic(3);
-%{
-sum(a)
-diag(a)
-sum(diag(a))
-%}
-sum(diag(fliplr(a)))
-```
-
-To break down script-code into chunks or *Code Sections*, use *%%* (two percent signs) at the start of the line where you want to begin the new code section.
-
-Type the code below in the *m*-file,
-
-```matlab
-%% Calculate and Plot Sine Wave
-% Define the range for x.
-% Calculate and plot y = sin(x).
-x = 0:1:6*pi;
-y = sin(x);
-plot(x,y)
-
-%% Modify Plot Properties
-title('Sine Wave')
-xlabel('x')
-ylabel('sin(x)')
-fig = gcf;
-fig.MenuBar = 'none';
-```
-
-The code has two sections, like so.
-
-![Code Sections](/images/code_sections.png)
-
 ### Useful Shortcuts
  - **Create** new script [`Ctrl + N`]
  - **Save** script [`Ctrl + S`]
@@ -128,7 +84,7 @@ ans =
 If you end a statement with a ; *(semicolon)*, MATLAB will performs the computation, but suppress the display of output in the **Command Window**.
 
 ```matlab
-b = (sin(a))^2;
+b = (sin(a)) ^ 2;
 ```
 
 To see the value of *b* in **Command Window**, type *b*.
@@ -142,7 +98,7 @@ b =
 
 To recall previous commands pressing the ↑ (up-arrow) and ↓(down-arrow) keys.
 
-## Data Types
+### Data Types
 
 Here are some useful data types supported in MATLAB.
 
@@ -180,6 +136,50 @@ Examples:
      ```
 
 `whos` displays information about specific variables in the current **Workspace**.
+
+## Adding Comments to Script
+To add comments to MATLAB code, use the *%* (percent) symbol. Comment lines can appear anywhere in a program file, also at the end of a line of code. Like so,
+
+```matlab
+% Add up all the vector elements.
+y = sum(x) % Use the sum function.
+```
+
+To comment out multiple lines of code, use the block comment operators, *%{* and *%}*. The *%{* and *%}* (percent symbol with curly braces) operators must appear alone on the lines that immediately precede and follow the block of help text. Do not include any other text on these lines.
+
+```matlab
+a = magic(3);
+%{
+sum(a)
+diag(a)
+sum(diag(a))
+%}
+sum(diag(fliplr(a)))
+```
+
+To break down script-code into chunks or *Code Sections*, use *%%* (two percent signs) at the start of the line where you want to begin the new code section.
+
+Type the code below in the *m*-file,
+
+```matlab
+%% Calculate and Plot Sine Wave
+% Define the range for x.
+% Calculate and plot y = sin(x).
+x = 0:1:6*pi;
+y = sin(x);
+plot(x, y)
+
+%% Modify Plot Properties
+title('Sine Wave')
+xlabel('x')
+ylabel('sin(x)')
+fig = gcf;
+fig.MenuBar = 'none';
+```
+
+The code has two sections, like so.
+
+![Code Sections](/images/code_sections.png)
 
 ## Matrices and Arrays
 
@@ -271,7 +271,7 @@ To create matrices one can also use functions, like `ones`, `zeros`, or `rand`.
 All values in an array can be processed using a single arithmetic operator or function.
 
 ```matlab
-a+10
+a + 10
 ```
 
 *Output:*
@@ -284,7 +284,7 @@ ans =
 ```
 
 ```matlab
-a*2
+a * 2
 ```
 
 *Output:*
@@ -314,7 +314,7 @@ ans =
 To apply an operator element-wise to the array, use *.* (dot) right before the operator.
 
 ```matlab
-a.^2
+a .^ 2
 ```
 
 *Output:*
@@ -329,7 +329,7 @@ ans =
 ### Matrix multiplication vs. Element-wise multiplication
 
 -    ```matlab
-     a*a
+     a * a
      ```
 
      *Output:*
@@ -342,7 +342,7 @@ ans =
      ```
 
 -    ```matlab
-     a.*a
+     a .* a
      ```
 
      *Output:*
@@ -389,7 +389,7 @@ A =
      7     8    10
 ```
 
-## Array Indexing
+### Array Indexing
 
 ```matlab
 A = magic(3)
@@ -563,7 +563,7 @@ y = sin(x);
 plot(x, y)
 hold on
 y2 = cos(x);
-plot(x,y2, ':m')
+plot(x, y2, ':m')
 legend('sin', 'cos')
 hold off
 ```
@@ -682,7 +682,142 @@ disp (2 + " * " + 1 + " = " + 2)
 2 * 1 = 2
 ```
 
-## Functions
+## Symbolic Functions
+
+Symbolic functions represent math functions and can be for differentiation, integration, solving ODEs, and other math operations. To create symbolic functions use `syms` like so,
+
+```matlab
+syms f(x, y) % Creates symbolic function 'f' with variables 'x' and 'y'
+f(x, y) = x ^ 2 * y % Assigns a mathematical expression to 'f'
+f(3, 2) % Finds the value of 'f' at (3,2)
+```
+
+$$f(x, y) = x ^ 2 * y$$
+
+*Output:*
+```matlab
+f(x, y) =
+ 
+x^2*y
+ 
+ 
+ans =
+ 
+18
+```
+
+### Differentiate Symbolic Expressions
+
+Expressions with Individual variables can be expressed like so,
+
+```matlab
+syms x  % Creates symbolic function 'x'
+f = sin(x) ^ 2 % Assigns a mathematical expression to 'f'
+diff(f) % Differentiates the symbolic expression 'f'
+```
+
+$$f = sin(x) ^ 2$$
+
+$$ans = 2 * cos(x) * sin(x)$$
+
+```matlab
+syms x y % Creates symbolic functions 'x' and 'y'
+f = (x) ^ 2 * y % Assigns a mathematical expression to 'f'
+fx = diff(f, x) % Assigns a mathematical expression to 'f'
+fy = diff(f, y) % Differentiates the symbolic expression i.e., 'df/dy'
+```
+
+$$f = x ^ 2 * y$$
+
+$$fx = 2 * x * y$$
+
+$$fy = x ^ 2$$
+
+### Integrate Symbolic Expressions
+
+```matlab
+syms x % Creates symbolic functions 'x'
+f = sin(x) ^ 2 % Assigns a mathematical expression to 'f'
+int(f) % Integrates the symbolic expression 'f' with respect to 'x'
+```
+
+$$f = sin(x) ^ 2$$
+
+$$ans = x/2 - sin(2*x)/4$$
+
+```matlab
+syms x y n % Creates symbolic functions 'x', 'y' and 'n'
+f = x^n + y^n % Assigns a mathematical expression to 'f'
+int(f, 1, 10) % Calculates definite integral
+```
+
+$$f = x^n + y^n$$
+
+$$ans = \left\{\begin{array}{cl} \log (10)+\frac{9}{y} & \text{\ if\ \ }n=-1\\ \frac{10\,{10}^n-1}{n+1}+9\,y^n & \text{\ if\ \ }n\neq -1 \end{array}\right.$$
+
+### Solve Equations
+
+You can solve different types of symbolic equations (like: equations with one or more symbolic variables, systems of algebraic equations, etc.). **For detailed information see [Equation Solving](https://se.mathworks.com/help/symbolic/equation-solving.html).**
+
+```matlab
+syms x % Creates symbolic functions 'x'
+solve(x^3 - 6*x^2 == 6 - 11*x) % Solves equations and systems
+```
+
+$$x^3 - 6*x^2 = 6 - 11*x$$
+
+Returns values of `x` to be `(1, 2, 3)`.
+
+You also can solve systems of equations, like so,
+
+```matlab
+syms x y z % Creates symbolic functions 'x', 'y' and 'z'
+[x, y, z] = solve(z == 4*x, x == y, z == x^2 + y^2) % Solves equations and systems
+```
+
+$$z = 4*x$$
+$$x = y$$
+$$z = x^2 + y^2$$
+
+The returns possible values of `(x, y, z)` to be `(0, 0, 0)` and `(2, 2, 8)`.
+
+### Simplify Symbolic Expressions
+
+```matlab
+syms x % Creates symbolic functions 'x'
+f = (x ^2- 1)*(x^4 + x^3 + x^2 + x + 1)*(x^4 - x^3 + x^2 - x + 1); % Assigns a mathematical expression to 'f'
+```
+
+$$f = {\left(x^2 -1\right)}\,{\left(x^4 -x^3 +x^2 -x+1\right)}\,{\left(x^4 +x^3 +x^2 +x+1\right)}$$
+
+You can simplify this answer by entering,
+
+```matlab
+simplify(f) % Simplifies representation of uncertain objects
+```
+
+$$f = x^{10} - 1$$
+
+### Substitutions in Symbolic Expressions
+
+```matlab
+syms x y % Creates symbolic functions 'x' and 'y'
+f = x^2*y + 5*x*sqrt(y) % Assigns a mathematical expression to 'f'
+```
+
+$$f = x^2 \,y+5\,x\,\sqrt{y}$$
+
+To substitute `x` with `3` enter command,
+
+```matlab
+subs(f, x, 3) % Substitutes symbolic 'x' in function 'f'
+```
+
+$$ans = 9\,y+15\,\sqrt{y}$$
+
+**Learn more about Symbolic Computations [here](https://se.mathworks.com/help/symbolic/performing-symbolic-computations.html).**
+
+## Functional Programming
 
 *Scripts* and *functions* allow to reuse sequences of commands by storing them in program files. Functions provide more flexibility, primarily because they can pass input values and return output values. For example, the function named `fact` computes the factorial of a number (`n`) and returns the result (`f`).
 
@@ -723,60 +858,6 @@ The output `A` is 3D matrix of `uint8` class and holds the RGB values of the ima
 
 ![JPG file ngc6543a](/images/imported_image.png)
 
-### Textual Data Files
-
-To import files, with specific space delimiter and the single column header, do this.
-
-```matlab
-filename = 'data_files/myfile01.txt';
-delimiterIn = ' ';
-headerlinesIn = 1;
-A = importdata(filename, delimiterIn, headerlinesIn);
-```
-
-View columns 3 and 5, using:
-
-```matlab
-for k = [3, 5]
-     disp(A.colheaders{1, k})
-     disp(A.data( :, k ))
-     disp(' ')
-end
-```
-
-*Output:*
-```matlab
-Day3
-   61.5400
-   79.1900
-   92.1800
-   73.8200
-   17.6300
-
-Day5
-    5.7900
-   35.2900
-   81.3200
-    0.9900
-   13.8900
-```
-
-Here's what the `myfile01.txt` actually looks like.
-
-*Output:*
-```matlab
-Day1  Day2  Day3  Day4  Day5  Day6  Day7
-95.01 76.21 61.54 40.57  5.79 20.28  1.53
-23.11 45.65 79.19 93.55 35.29 19.87 74.68
-60.68  1.85 92.18 91.69 81.32 60.38 44.51
-48.60 82.14 73.82 41.03  0.99 27.22 93.18
-89.13 44.47 17.63 89.36 13.89 19.88 46.60
-```
-
-To export *object data* to an Excel file, use `export(ps, filename, sheet)`. Here, `ps` is the parameter set to export, `filename` is the name of the file, and `sheet` is the name of Excel workbook sheet.
-
-**More details on `importdata` can be found [here](https://se.mathworks.com/help/matlab/ref/importdata.html?searchHighlight=colheaders&s_tid=srchtitle).**
-
 ### Audio Data Files
 
 The `audioinfo` gets the information about the audio file.
@@ -814,6 +895,60 @@ ylabel('Audio Signal')
 ```
 
 ![Audio Data Plot](/images/imported_audio.png)
+
+### Textual Data Files
+
+To import files, with specific space delimiter and the single column header, do this.
+
+```matlab
+filename = 'data_files/myfile01.txt';
+delimiterIn = ' ';
+headerlinesIn = 1;
+A = importdata(filename, delimiterIn, headerlinesIn);
+```
+
+Here's what the `myfile01.txt` actually looks like.
+
+*Output:*
+```matlab
+Day1  Day2  Day3  Day4  Day5  Day6  Day7
+95.01 76.21 61.54 40.57  5.79 20.28  1.53
+23.11 45.65 79.19 93.55 35.29 19.87 74.68
+60.68  1.85 92.18 91.69 81.32 60.38 44.51
+48.60 82.14 73.82 41.03  0.99 27.22 93.18
+89.13 44.47 17.63 89.36 13.89 19.88 46.60
+```
+
+View columns 3 and 5, using:
+
+```matlab
+for k = [3, 5]
+     disp(A.colheaders{1, k})
+     disp(A.data( :, k ))
+     disp(' ')
+end
+```
+
+*Output:*
+```matlab
+Day3
+   61.5400
+   79.1900
+   92.1800
+   73.8200
+   17.6300
+
+Day5
+    5.7900
+   35.2900
+   81.3200
+    0.9900
+   13.8900
+```
+
+To export *object data* to an Excel file, use `export(ps, filename, sheet)`. Here, `ps` is the parameter set to export, `filename` is the name of the file, and `sheet` is the name of Excel workbook sheet.
+
+**More details on `importdata` can be found [here](https://se.mathworks.com/help/matlab/ref/importdata.html?searchHighlight=colheaders&s_tid=srchtitle).**
 
 ### CSV Data Files
 
@@ -952,92 +1087,204 @@ ans =
    20.0000
 ```
 
-### Importing XYZ Data and Using Different Plot Types
+---
+
+## Useful Examples
+
+### Importing TXT Data and Extracting Tabular Data
 
 ```matlab
-%% Importing XYZ data and Displaying as Scatter Plot
-xyzData = importdata('data_files\hm_ac.xyz');
+%% Clearing previous session
+clc % Clears Command Window
+clear % Remove all variables from workspace
+close all % Closes all figures
+
+%% Initializing import file name
+filename = 'data_files/06102017.txt'; % File path
+
+%% Importing lines 11-13 from text file
+para = detectImportOptions(filename); % Creates import options based on file content
+para.DataLines = [11 13]; % Selects lines 11-13
+p_data = readcell(filename, para); % Reads cell array from file
+
+disp('MIDAS SVP 500 Parameters:'); % Displays value in Command Window
+fprintf(1, '%s\n', p_data{:}); % Displays call data to Command Window 
+
+%% Importing lines 32-130 from text file
+ipts = detectImportOptions(filename); % Creates import options based on file content
+ipts.DataLines = [32 130]; % Selects lines 32-130
+ipts.VariableNames = {'Date_Time', 'Sound_Velocity', ...
+    'Pressure', 'Temperature'}; % Creates column names
+T_first = readtable(filename, ipts); % Creates table from file
+data_count = height(T_first); % Counts number of table rows
+
+%% Plotting data
+figure % Creates new figure
+plot(1:data_count, T_first.Pressure)
+hold on % Retain current plot when adding new plots
+plot(1:data_count, T_first.Temperature)
+legend('Pressure','Temperature') % Adds legend to figure
+title('Variation of Water Temperature with Depth') % Adds title to figure
+hold off % Stops retaining current plot
+```
+
+![Pressure vs. Temperature](/images/pressure_v_temp.png)
+
+### Importing XYZ Data and Visualizing it Using Different Plot Types
+
+The following example visualizes the topography of seabed data.
+
+```matlab
+%% Clearing previous session
+clc % Clears Command Window
+clear % Remove all variables from workspace
+close all % Closes all figures
+
+%% Importing XYZ data
+xyzData = importdata('data_files\hm_ac.xyz'); % Loads data from file
 X = xyzData(:, 1); % X-Axis data
 Y = xyzData(:, 2); % Y-Axis data
 Z = xyzData(:, 3); % Z-Axis data
+
+%% Plot Type 1 - Scatter Plot
 figure % Creates new figure window
 scatter3(X, Y, Z, 'MarkerFaceColor', [0 .75 .75]) % 3D Scatter Plot
 view([90 45]) % Changes Plot View
 
-%% Plot Type 2
+%% converting XYZ data into surface
 tri = delaunay(X, Y); % 2-D Delaunay triangulation from points in vectors X and Y
+
+%% Plot Type 2 - Surface Plot
 figure % Creates new figure window
 trisurf(tri, X, Y, Z); % Plots 3-D triangular surface
 shading interp % Color shades surface using interpolating
 view([90 45]) % Changes Plot View
 
-%% Plot Type 3
-min_long = min(X); % Finding min/max values
-min_lat = min(Y);
-max_long = max(X);
-max_lat = max(Y);
-proj_long = linspace(min_long, max_long, 100); % Generates linearly spaced vectors
-proj_lat = linspace(min_lat, max_lat, 100);
-%Interpolates between assigned values to refine the grid
-[PROJ_LONG, PROJ_LAT] = ndgrid(proj_long, proj_lat);
-
-% Perform interpolation on 2-D or 3-D data set of scattered data
-F = scatteredInterpolant(X, Y, Z);
-PROJ_Z = F(PROJ_LONG, PROJ_LAT);
-
-figure
-% Represents data as a Surface
-surf(PROJ_LONG, PROJ_LAT, PROJ_Z, 'edgecolor', 'none');
-
-figure
-% Plots Filled 2-D Contour Plots
-contourf(PROJ_LONG, PROJ_LAT, PROJ_Z);
-
-%% Plot Type 4
+%% Another method for converting XYZ data into surface
 % Creates 2-D or 3-D Delaunay Triangulation from set of points
 dt = delaunayTriangulation(X, Y);
 tri = dt.ConnectivityList;
 xi = dt.Points(:, 1);
 yi = dt.Points(:, 2);
-zi = F(xi, yi) ;
 
+% Perform interpolation on 2-D or 3-D data set of scattered data
+F = scatteredInterpolant(X, Y, Z);
+zi = F(xi, yi);
+
+%% Plot Type 3 - 2D view of Scatter Plot
 figure
 % Plots 3-D triangular surface using vectors X, Y, and Z, and triangle connectivity matrix T
-trisurf(tri, xi, yi, zi) 
-view(2)
-shading interp
+trisurf(tri, xi, yi, zi)
+shading interp % Sets color shading properties
+view([90 90]) % Changes Plot View
 ```
 
-![XYZ Plot 1](/images/xyz_plot_1.png)
-![XYZ Plot 2](/images/xyz_plot_2.png)
-![XYZ Plot 3](/images/xyz_plot_3.png)
-![XYZ Plot 4](/images/xyz_plot_4.png)
-![XYZ Plot 5](/images/xyz_plot_5.png)
+![XYZ Plot 1](/images/xyz_1_plot_1.png)
+![XYZ Plot 2](/images/xyz_1_plot_2.png)
+![XYZ Plot 3](/images/xyz_1_plot_3.png)
 
----
-
-**Here's another [example](https://se.mathworks.com/matlabcentral/answers/491600-how-do-i-create-a-3-dimensional-response-surface-plot-from-x-y-z-points) illustrating previously discussed functions:**
+And, the following example visualizes a submarine lying on the seabed data (*using other plot types*).
 
 ```matlab
-X = [288 318 127 132 264 200 268];
-Y = [2.79 4.64 2.31 7.16 2.31 2.60 3.06];
-Z = [7.55 14.28 8.31 17.27 4.32 6.74 15.12];
+%% Clearing previous session
+clc % Clears Command Window
+clear % Remove all variables from workspace
+close all % Closes all figures
 
-%% Apply cubic interpolation 
-[xGrid,yGrid] = meshgrid(linspace(min(X), max(X)), linspace(min(Y), max(Y)));
-zGrid = griddata(X(:), Y(:), Z(:), xGrid(:), yGrid(:), 'cubic');
-zGrid = reshape(zGrid, size(xGrid));
+%% Importing XYZ data
+xyzData = importdata('data_files\talllaht_6.xyz');
+X = xyzData(:, 1); % X-Axis data
+Y = xyzData(:, 2); % Y-Axis data
+Z = xyzData(:, 3); % Z-Axis data
 
-%% Visualize the result
+%% Another method for converting XYZ data into surface
+% Creates 2-D or 3-D Delaunay Triangulation from set of points
+dt = delaunayTriangulation(X, Y);
+tri = dt.ConnectivityList;
+xi = dt.Points(:, 1);
+yi = dt.Points(:, 2);
+
+% Perform interpolation on 2-D or 3-D data set of scattered data
+F = scatteredInterpolant(X, Y, Z);
+zi = F(xi, yi);
+
+%% Plot Type 1 - 2D view of Scatter Plot
 figure
-contour(xGrid, yGrid, zGrid, 'ShowText', 'on')
-hold on
-scatter(X, Y, 'ro')
-grid on
-colorbar
+% Plots 3-D triangular surface using vectors X, Y, and Z, and triangle connectivity matrix T
+trisurf(tri, xi, yi, zi)
+shading interp % Sets color shading properties
+view([270 90]) % Changes Plot View
+
+%% Reducing data resolution (i.e., cell size)
+min_long = min(X); % Finds min values
+min_lat = min(Y); % Finds min values
+max_long = max(X); % Finds max values
+max_lat = max(Y); % Finds max values
+proj_long = linspace(min_long, max_long, 1000); % Generates linearly spaced vectors
+proj_lat = linspace(min_lat, max_lat, 1000); % Generates linearly spaced vectors
+%Interpolates between assigned values to refine the grid
+[PROJ_LONG, PROJ_LAT] = ndgrid(proj_long, proj_lat); % Creates rectangular grid in N-D space
+PROJ_Z = F(PROJ_LONG, PROJ_LAT);
+
+%% Plot Type 2 - Filled Contour Plot
+figure
+% Plots Filled 2-D Contour Plots
+contourf(PROJ_LONG, PROJ_LAT, PROJ_Z); % Fills data into 2-D contour plot
+camroll(90) % Rotates camera about view axis
+
+%% Plot Type 3 - Simple Contour Plot with data
+contour(PROJ_LONG, PROJ_LAT, PROJ_Z, 'ShowText', 'on') % Creates contour plot of matrix
+camroll(90) % Rotates camera about view axis
+grid on % Displays axes grid lines
+colorbar % Shows color scale using a colorbar
 ```
 
-![Surface Plot](/images/surface_plot_example.png)
+![XYZ Plot 1](/images/xyz_2_plot_1.png)
+![XYZ Plot 2](/images/xyz_2_plot_2.png)
+![XYZ Plot 3](/images/xyz_2_plot_3.png)
+
+### Plotting Longitudes - Latitudes on Maps
+
+The following example visualizes the locations of post offices in Tallinn, Estonia.
+
+```matlab
+%% Clearing previous session
+clc % Clears Command Window
+clear % Remove all variables from workspace
+close all % Closes all figures
+
+%% Importing CSV file
+csv_file = 'data_files\baltic_post_office_locations.csv'; % CSV file path
+csv_data = readtable(csv_file); % Creates table from CSV file
+
+%% Selecting specific columns from MATLAB table
+% Extracting three columns from 'csv_data' into 'slctd_clmns'
+slctd_clmns.NAME = csv_data.A1_NAME;
+slctd_clmns.LONGITUDE = csv_data.X_COORDINATE;
+slctd_clmns.LATITUDE = csv_data.Y_COORDINATE;
+
+slctd_clmns = struct2table(slctd_clmns) % Converts structure array to table
+
+%% Extracting rows with NAME == 'Harju maakond'
+po_in_harju = slctd_clmns(strcmpi(slctd_clmns.NAME, 'Harju maakond'), :);
+
+%% Bounding Box retrieved from https://boundingbox.klokantech.com/
+lat_harju_N = 59.591577
+lon_harju_E = 24.550170
+
+lat_harju_S = 59.351808
+lon_harju_W = 24.926283
+
+geoplot(po_in_harju.LATITUDE, po_in_harju.LONGITUDE, 'r*') % Plots geographic coordinates
+geolimits([lat_harju_S lat_harju_N],[lon_harju_E lon_harju_W]) % Sets geographic limits
+geobasemap streets % Sets basemap style
+```
+
+![Geographic Plot](/images/geo_plot.png)
+
+Other geographic basemaps avaiable in MATLAB can be found [here](https://se.mathworks.com/help/matlab/ref/geobasemap.html).
+
+---
 
 **Now, try these out yourself:**
 - Initialize temperature in Fahrenheit and convert it to Celsius.
@@ -1076,3 +1323,6 @@ Or, run this `openExample('phased/ActiveSonarExample')` in the **Command Window*
 ## Sources
 1. "Introduction to MATLAB Programming" Courseware [https://se.mathworks.com/academia/highschool/courseware/introduction-to-matlab.html]
 2. Get Started with MATLAB [https://se.mathworks.com/help/matlab/getting-started-with-matlab.html]
+
+
+
