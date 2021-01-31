@@ -692,7 +692,7 @@ f(x, y) = x ^ 2 * y % Assigns a mathematical expression to 'f'
 f(3, 2) % Finds the value of 'f' at (3,2)
 ```
 
-$$f(x, y) = x ^ 2 * y$$
+<img src="https://render.githubusercontent.com/render/math?math=f(x,%20y)%20=%20x%20^%202%20*%20y&mode=inline">
 
 *Output:*
 ```matlab
@@ -716,9 +716,9 @@ f = sin(x) ^ 2 % Assigns a mathematical expression to 'f'
 diff(f) % Differentiates the symbolic expression 'f'
 ```
 
-$$f = sin(x) ^ 2$$
-
-$$ans = 2 * cos(x) * sin(x)$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20=%20sin(x)%20^%202&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=ans%20=%202%20*%20cos(x)%20*%20sin(x)&mode=inline">
 
 ```matlab
 syms x y % Creates symbolic functions 'x' and 'y'
@@ -727,11 +727,11 @@ fx = diff(f, x) % Assigns a mathematical expression to 'f'
 fy = diff(f, y) % Differentiates the symbolic expression i.e., 'df/dy'
 ```
 
-$$f = x ^ 2 * y$$
-
-$$fx = 2 * x * y$$
-
-$$fy = x ^ 2$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20=%20x%20^%202%20*%20y&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=fx%20=%202%20*%20x%20*%20y&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=fy%20=%20x%20^%202&mode=inline">
 
 ### Integrate Symbolic Expressions
 
@@ -741,9 +741,9 @@ f = sin(x) ^ 2 % Assigns a mathematical expression to 'f'
 int(f) % Integrates the symbolic expression 'f' with respect to 'x'
 ```
 
-$$f = sin(x) ^ 2$$
-
-$$ans = x/2 - sin(2*x)/4$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20=%20sin(x)%20^%202&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=ans%20=%20x/2%20-%20sin(2*x)/4&mode=inline">
 
 ```matlab
 syms x y n % Creates symbolic functions 'x', 'y' and 'n'
@@ -751,9 +751,9 @@ f = x^n + y^n % Assigns a mathematical expression to 'f'
 int(f, 1, 10) % Calculates definite integral
 ```
 
-$$f = x^n + y^n$$
-
-$$ans = \left\{\begin{array}{cl} \log (10)+\frac{9}{y} & \text{\ if\ \ }n=-1\\ \frac{10\,{10}^n-1}{n+1}+9\,y^n & \text{\ if\ \ }n\neq -1 \end{array}\right.$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20=%20x^n%20+%20y^n&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=ans%20%3D%20%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Bcl%7D%20%5Clog%20(10)%2B%5Cfrac%7B9%7D%7By%7D%20%26%20%5Ctext%7B%5C%20if%5C%20%5C%20%7Dn%3D-1%5C%5C%20%5Cfrac%7B10%5C%2C%7B10%7D%5En-1%7D%7Bn%2B1%7D%2B9%5C%2Cy%5En%20%26%20%5Ctext%7B%5C%20if%5C%20%5C%20%7Dn%5Cneq%20-1%20%5Cend%7Barray%7D%5Cright.%0A">
 
 ### Solve Equations
 
@@ -764,7 +764,7 @@ syms x % Creates symbolic functions 'x'
 solve(x^3 - 6*x^2 == 6 - 11*x) % Solves equations and systems
 ```
 
-$$x^3 - 6*x^2 = 6 - 11*x$$
+<img src="https://render.githubusercontent.com/render/math?math=x^3%20-%206*x^2%20=%206%20-%2011*x&mode=inline">
 
 Returns values of `x` to be `(1, 2, 3)`.
 
@@ -775,9 +775,11 @@ syms x y z % Creates symbolic functions 'x', 'y' and 'z'
 [x, y, z] = solve(z == 4*x, x == y, z == x^2 + y^2) % Solves equations and systems
 ```
 
-$$z = 4*x$$
-$$x = y$$
-$$z = x^2 + y^2$$
+<img src="https://render.githubusercontent.com/render/math?math=z%20=%204*x&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=x%20=%20y&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=z%20=%20x^2%20%2B%20y^2&mode=inline">
 
 The returns possible values of `(x, y, z)` to be `(0, 0, 0)` and `(2, 2, 8)`.
 
@@ -788,7 +790,7 @@ syms x % Creates symbolic functions 'x'
 f = (x ^2- 1)*(x^4 + x^3 + x^2 + x + 1)*(x^4 - x^3 + x^2 - x + 1); % Assigns a mathematical expression to 'f'
 ```
 
-$$f = {\left(x^2 -1\right)}\,{\left(x^4 -x^3 +x^2 -x+1\right)}\,{\left(x^4 +x^3 +x^2 +x+1\right)}$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20%3D%20%7B%5Cleft(x%5E2%20-1%5Cright)%7D%5C%2C%7B%5Cleft(x%5E4%20-x%5E3%20%2Bx%5E2%20-x%2B1%5Cright)%7D%5C%2C%7B%5Cleft(x%5E4%20%2Bx%5E3%20%2Bx%5E2%20%2Bx%2B1%5Cright)%7D">
 
 You can simplify this answer by entering,
 
@@ -796,7 +798,7 @@ You can simplify this answer by entering,
 simplify(f) % Simplifies representation of uncertain objects
 ```
 
-$$f = x^{10} - 1$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20=%20x^{10}%20-%201&mode=inline">
 
 ### Substitutions in Symbolic Expressions
 
@@ -805,7 +807,7 @@ syms x y % Creates symbolic functions 'x' and 'y'
 f = x^2*y + 5*x*sqrt(y) % Assigns a mathematical expression to 'f'
 ```
 
-$$f = x^2 \,y+5\,x\,\sqrt{y}$$
+<img src="https://render.githubusercontent.com/render/math?math=f%20=%20x^2%20\,y%2B5\,x\,\sqrt{y}&mode=inline">
 
 To substitute `x` with `3` enter command,
 
@@ -813,7 +815,7 @@ To substitute `x` with `3` enter command,
 subs(f, x, 3) % Substitutes symbolic 'x' in function 'f'
 ```
 
-$$ans = 9\,y+15\,\sqrt{y}$$
+<img src="https://render.githubusercontent.com/render/math?math=ans%20=%209\,y%2B15\,\sqrt{y}&mode=inline">
 
 **Learn more about Symbolic Computations [here](https://se.mathworks.com/help/symbolic/performing-symbolic-computations.html).**
 
@@ -1323,6 +1325,3 @@ Or, run this `openExample('phased/ActiveSonarExample')` in the **Command Window*
 ## Sources
 1. "Introduction to MATLAB Programming" Courseware [https://se.mathworks.com/academia/highschool/courseware/introduction-to-matlab.html]
 2. Get Started with MATLAB [https://se.mathworks.com/help/matlab/getting-started-with-matlab.html]
-
-
-
