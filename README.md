@@ -1451,11 +1451,11 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 
      *In the above equation, P (=h(Z,Q)) would apply to the oceanographers' standard ocean, defined as an ideal medium with a temperature of 0 °C and salinity of 35 parts per thousand.*
 
-Also, try out **MATLAB's [GPS receiver simulation model](https://se.mathworks.com/help/nav/ref/gpssensor-system-object.html).**
-Or, run this `openExample('shared_positioning/GenerateGPSPositionMeasurementsFromStationaryInputExample')` in the **Command Window**.
+Also, try out these **MATLAB Examples**:
 
-Also, try out **MATLAB's [Underwater Target Detection with an Active Sonar System](https://se.mathworks.com/help/phased/ug/underwater-target-detection-with-an-active-sonar-system.html).**
-Or, run this `openExample('phased/ActiveSonarExample')` in the **Command Window**.
+- [GPS receiver simulation model](https://se.mathworks.com/help/nav/ref/gpssensor-system-object.html). Run this `openExample('shared_positioning/GenerateGPSPositionMeasurementsFromStationaryInputExample')` in the **Command Window**.
+
+- [Underwater Target Detection with an Active Sonar System](https://se.mathworks.com/help/phased/ug/underwater-target-detection-with-an-active-sonar-system.html). Run this `openExample('phased/ActiveSonarExample')` in the **Command Window**.
 
 ## Sources
 1. "Introduction to MATLAB Programming" Courseware [https://se.mathworks.com/academia/highschool/courseware/introduction-to-matlab.html]
