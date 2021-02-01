@@ -1122,13 +1122,26 @@ data_count = height(T_first); % Counts number of table rows
 
 %% Plotting data
 figure % Creates new figure
-plot(1:data_count, T_first.Pressure)
+line(1:data_count, T_first.Pressure, 'Color', 'b') % Creates primitive line plot
+ylabel('Pressure');
 hold on % Retain current plot when adding new plots
-plot(1:data_count, T_first.Temperature)
-legend('Pressure','Temperature') % Adds legend to figure
-legend('Location','southeast') % Moves lend to specific location with respect to axes
+
+ax1 = gca; % Selects current axes
+ax1.YColor = 'b';
+ax1_pos = ax1.Position; % Selects position of first axes
+ax2 = axes('Position', ax1_pos, ... % Sets position properties
+    'XAxisLocation', 'top', ...
+    'YAxisLocation', 'right', ...
+    'Color','none');
+set(ax1, 'xticklabel', []) % Removes X-Tick labels for first plot
+set(ax2, 'xticklabel', []) % Removes X-Tick labels for second plot
+
+line(1:data_count, T_first.Temperature, 'Color', 'r') % Creates primitive line plot
+ylabel('Temperature'); % Sets Y-Axis Label
+ax2.YColor = 'r';
+set(get(ax2,'ylabel'),'rotation',-90,'VerticalAlignment','bottom') % Set graphics object properties
 title('Variation of Water Temperature with Depth') % Adds title to figure
-set(gca, 'Ydir', 'reverse') % Reverse the orientation of Y-Axis
+set(ax1, 'Ydir', 'reverse') % Reverse the orientation of Y-Axis
 hold off % Stops retaining current plot
 ```
 
