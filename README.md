@@ -1391,7 +1391,7 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 
 - [Mackenzie Equation (1981)](http://resource.npl.co.uk/acoustics/techguides/soundseawater/refs.html#7)
 
-     ![equation](https://latex.codecogs.com/gif.latex?c%28D%2CS%2CT%29%20%3D%20%5Ctextsuperscript%7B%7D%201448.96%20&plus;%204.591T%20-%205.304%20x%2010%5Ctextsuperscript%7B-2%7DT%5Ctextsuperscript%7B2%7D%20&plus;%202.374%20x%2010%5Ctextsuperscript%7B-4%7DT%5Ctextsuperscript%7B3%7D%20&plus;%201.340%20%28S-35%29%20&plus;%201.630%20x%2010%5Ctextsuperscript%7B-2%7DD%20&plus;%201.675%20x%2010%5Ctextsuperscript%7B-7%7DD%5Ctextsuperscript%7B2%7D%20-%201.025%20x%2010%5Ctextsuperscript%7B-2%7DT%28S%20-%2035%29%20-%207.139%20x%2010%5Ctextsuperscript%7B-13%7DTD%5Ctextsuperscript%7B3%7D)
+     ![equation](https://latex.codecogs.com/gif.latex?c%28D%2CS%2CT%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%201448.96%20&plus;%204.591T%20-%205.304%20*%2010%5Ctextsuperscript%7B-2%7DT%5Ctextsuperscript%7B2%7D%20&plus;%202.374%20*%2010%5Ctextsuperscript%7B-4%7DT%5Ctextsuperscript%7B3%7D%20&plus;%201.340%20%28S-35%29%20&plus;%201.630%20*%2010%5Ctextsuperscript%7B-2%7DD%20&plus;%201.675%20*%2010%5Ctextsuperscript%7B-7%7DD%5Ctextsuperscript%7B2%7D%20-%201.025%20*%2010%5Ctextsuperscript%7B-2%7DT%28S%20-%2035%29%20-%207.139%20*%2010%5Ctextsuperscript%7B-13%7DTD%5Ctextsuperscript%7B3%7D)
 
      *T = temperature in degrees Celsius*
 
@@ -1417,9 +1417,11 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 
 - Conversion of pressure into depth - [Leroy and Parthiot (1998)](http://resource.npl.co.uk/acoustics/techguides/soundseawater/refs.html#6)
 
-     ![equation](https://latex.codecogs.com/gif.latex?Z%5Ctextsubscript%7BS%7D%28P%2CQ%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.72659%20x%2010%5Ctextsuperscript%7B2%7DP%20-%202.2512%20x%2010%5Ctextsuperscript%7B-1%7D%20P%5Ctextsuperscript%7B2%7D%20&plus;%202.279%20x%2010%5Ctextsuperscript%7B-4%7D%20P%5Ctextsuperscript%7B3%7D%20-%201.82%20x%2010%5Ctextsuperscript%7B-7%7D%20P%5Ctextsuperscript%7B4%7D%20g%28Q%29%20&plus;%201.092%20x%2010%5Ctextsuperscript%7B-4%7D%20P)
+     ![equation](https://latex.codecogs.com/gif.latex?Z%5Ctextsubscript%7BS%7D%28P%2CQ%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.72659%20*%2010%5Ctextsuperscript%7B2%7DP%20-%202.2512%20*%2010%5Ctextsuperscript%7B-1%7D%20P%5Ctextsuperscript%7B2%7D%20&plus;%202.279%20*%2010%5Ctextsuperscript%7B-4%7D%20P%5Ctextsuperscript%7B3%7D%20-%201.82%20*%2010%5Ctextsuperscript%7B-7%7D%20P%5Ctextsuperscript%7B4%7D%20g%28Q%29%20&plus;%201.092%20*%2010%5Ctextsuperscript%7B-4%7D%20P)
 
      *Where g(Q), the international formula for gravity, is given by:*
+
+     ![equation](https://latex.codecogs.com/gif.latex?g%28Q%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.780318%20%281%20&plus;%205.2788%20*%2010%5Ctextsuperscript%7B-3%7D%20sin%5Ctextsuperscript%7B2%7DQ%20&plus;%202.36%20*%2010%5Ctextsuperscript%7B-5%7D%20sin%5Ctextsuperscript%7B4%7D%20Q%29)
 
      *Z = depth in metres*
 
@@ -1431,13 +1433,15 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 
      ![equation](https://latex.codecogs.com/gif.latex?P%28Z%2CQ%29%20%3D%20h%28Z%2CQ%29%20-%20Th%5Ctextsubscript%7B0%7DZ)
 
-     ![equation](https://latex.codecogs.com/gif.latex?h%28Z%2C45%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%201.00818%20x%2010%5Ctextsuperscript%7B-2%7D%20Z%20&plus;%202.465%20x%2010%5Ctextsuperscript%7B-8%7DZ%5Ctextsuperscript%7B2%7D%20-%201.25%20x%2010%5Ctextsuperscript%7B-13%7DZ%5Ctextsuperscript%7B3%7D%20&plus;%202.8%20x%2010%5Ctextsuperscript%7B-19%7DZ%5Ctextsuperscript%7B4%7D)
+     ![equation](https://latex.codecogs.com/gif.latex?h%28Z%2CQ%29%20%3D%20h%28Z%2C45%29%20*%20k%28Z%2CQ%29)
 
-     ![equation](https://latex.codecogs.com/gif.latex?k%28Z%2CQ%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%20%28g%28Q%29%20-%202%20x%2010%5Ctextsuperscript%7B-5%7DZ%29%5Ctextbf%7B/%7D%289.80612%20-%202%20x%2010%5Ctextsuperscript%7B-5%7DZ%29)
+     ![equation](https://latex.codecogs.com/gif.latex?h%28Z%2C45%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%201.00818%20*%2010%5Ctextsuperscript%7B-2%7D%20Z%20&plus;%202.465%20*%2010%5Ctextsuperscript%7B-8%7DZ%5Ctextsuperscript%7B2%7D%20-%201.25%20*%2010%5Ctextsuperscript%7B-13%7DZ%5Ctextsuperscript%7B3%7D%20&plus;%202.8%20*%2010%5Ctextsuperscript%7B-19%7DZ%5Ctextsuperscript%7B4%7D)
 
-     ![equation](https://latex.codecogs.com/gif.latex?g%28Q%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.7803%281%20&plus;%205.3%20x%2010%5Ctextsuperscript%7B-3%7D%20sin%5Ctextsuperscript%7B2%7DQ%29)
+     ![equation](https://latex.codecogs.com/gif.latex?k%28Z%2CQ%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%20%28g%28Q%29%20-%202%20*%2010%5Ctextsuperscript%7B-5%7DZ%29%5Ctextbf%7B/%7D%289.80612%20-%202%20*%2010%5Ctextsuperscript%7B-5%7DZ%29)
 
-     ![equation](https://latex.codecogs.com/gif.latex?Th%5Ctextsubscript%7B0%7DZ%20%3D%201.0x10%5Ctextsuperscript%7B-2%7D%20Z/%28Z&plus;100%29%20&plus;%206.2x10%5Ctextsuperscript%7B-6%7D%20Z)
+     ![equation](https://latex.codecogs.com/gif.latex?g%28Q%29%20%3D%20%5Ctextsuperscript%7B%7E%7D%209.7803%281%20&plus;%205.3%20*%2010%5Ctextsuperscript%7B-3%7D%20sin%5Ctextsuperscript%7B2%7DQ%29)
+
+     ![equation](https://latex.codecogs.com/gif.latex?Th%5Ctextsubscript%7B0%7DZ%20%3D%201.0%20*%2010%5Ctextsuperscript%7B-2%7D%20Z/%28Z&plus;100%29%20&plus;%206.2%20*%2010%5Ctextsuperscript%7B-6%7D%20Z)
 
      *Z = depth in metres*
 
