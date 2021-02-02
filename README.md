@@ -1102,6 +1102,50 @@ clear % Remove all variables from workspace
 close all % Closes all figures
 
 %% Initializing import file name
+filename = '06102017.txt'; % File path
+
+%% Importing lines 11-13 from text file
+para = detectImportOptions(filename); % Creates import options based on file content
+para.DataLines = [11 13]; % Selects lines 11-13
+p_data = readcell(filename, para); % Reads cell array from file
+disp('MIDAS SVP 500 Parameters:'); % Displays value in Command Window
+fprintf(1, '%s\n', p_data{:}); % Displays call data to Command Window 
+
+%% Importing lines 32-130 from text file
+ipts = detectImportOptions(filename); % Creates import options based on file content
+ipts.DataLines = [32 130]; % Selects lines 32-130
+ipts.VariableNames = {'Date_Time', 'Sound_Velocity', ...
+    'Pressure', 'Temperature'}; % Creates column names
+T_first = readtable(filename, ipts); % Creates table from file
+data_count = height(T_first); % Counts number of table rows
+
+%% Plotting data
+figure % Creates new figure
+plot(1:data_count, T_first.Pressure)
+hold on % Retain current plot when adding new plots
+plot(1:data_count, T_first.Temperature)
+legend('Pressure','Temperature') % Adds legend to figure
+legend('Location','southeast') % Moves lend to specific location with respect to axes
+title('Variation of Water Temperature with Depth') % Adds title to figure
+set(gca, 'Ydir', 'reverse') % Reverse the orientation of Y-Axis
+hold off % Stops retaining current plot
+```
+
+*The above code plots a different output. Can you fix the code to get the output below?*
+
+![Pressure vs. Temperature](/images/pressure_v_temp.png)
+
+<details>
+<summary>Here's the correct code...</summary>
+<p>
+
+```matlab
+%% Clearing previous session
+clc % Clears Command Window
+clear % Remove all variables from workspace
+close all % Closes all figures
+
+%% Initializing import file name
 filename = 'data_files/06102017.txt'; % File path
 
 %% Importing lines 11-13 from text file
@@ -1142,50 +1186,6 @@ ax2.YColor = 'r'; % Sets Y-Axis color
 set(get(ax2,'ylabel'),'rotation',-90,'VerticalAlignment','bottom') % Set graphics object properties
 title('Variation of Water Temperature with Depth') % Adds title to figure
 set(ax1, 'Ydir', 'reverse') % Reverse the orientation of Y-Axis
-hold off % Stops retaining current plot
-```
-
-*The above code plots a different output. Can you fix the code to get the output below?*
-
-![Pressure vs. Temperature](/images/pressure_v_temp.png)
-
-<details>
-<summary>Here's the correct code...</summary>
-<p>
-
-```matlab
-%% Clearing previous session
-clc % Clears Command Window
-clear % Remove all variables from workspace
-close all % Closes all figures
-
-%% Initializing import file name
-filename = '06102017.txt'; % File path
-
-%% Importing lines 11-13 from text file
-para = detectImportOptions(filename); % Creates import options based on file content
-para.DataLines = [11 13]; % Selects lines 11-13
-p_data = readcell(filename, para); % Reads cell array from file
-disp('MIDAS SVP 500 Parameters:'); % Displays value in Command Window
-fprintf(1, '%s\n', p_data{:}); % Displays call data to Command Window 
-
-%% Importing lines 32-130 from text file
-ipts = detectImportOptions(filename); % Creates import options based on file content
-ipts.DataLines = [32 130]; % Selects lines 32-130
-ipts.VariableNames = {'Date_Time', 'Sound_Velocity', ...
-    'Pressure', 'Temperature'}; % Creates column names
-T_first = readtable(filename, ipts); % Creates table from file
-data_count = height(T_first); % Counts number of table rows
-
-%% Plotting data
-figure % Creates new figure
-plot(1:data_count, T_first.Pressure)
-hold on % Retain current plot when adding new plots
-plot(1:data_count, T_first.Temperature)
-legend('Pressure','Temperature') % Adds legend to figure
-legend('Location','southeast') % Moves lend to specific location with respect to axes
-title('Variation of Water Temperature with Depth') % Adds title to figure
-set(gca, 'Ydir', 'reverse') % Reverse the orientation of Y-Axis
 hold off % Stops retaining current plot
 ```
 
