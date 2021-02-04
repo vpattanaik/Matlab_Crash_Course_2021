@@ -578,6 +578,31 @@ Line styles and colors can be indicated using these.
 |-------------|---------|
 | Solid line `-`, Dashed line `--`, Dotted line `:`, Dash-dot line `-.` | yellow `y`, magenta `m`, cyan `c`, red `r`, green `g`, blue `b`, white `w`, black `k` |
 
+## Saving Plots
+
+To save figures to specific file formats, use the `saveas` function.
+
+`saveas(fig, filename)` saves the figure or Simulink block diagram specified by `fig` to file `filename`.
+`saveas(fig, filename, formattype)` creates the file using the specified file format, `formattype`.
+
+*Example:*
+
+```matlab
+x = [2 4 7 2 4 5 2 5 1 4]; % Initializes variable `x`
+bar(x); % Plots `x` as bar graph
+saveas(gcf, 'Barchart.png') % Saves the plotted bar graph in `png` format
+```
+
+Here `gcf` denotes the current figure i.e., `bar(x)`.
+
+Alternatively, you can also name the figure like so,
+
+```matlab
+x = [2 4 7 2 4 5 2 5 1 4]; % Initializes variable `x`
+fig = bar(x); % Plots `x` as bar graph and names the figure as `fig` 
+saveas(fig, 'Barchart.png') % Saves the plotted bar graph in `png` format
+```
+
 ## Conditional Statements
 
 Conditional statements enable users to select at run time which block of code to execute. The simplest conditional statement is an `if` statement.
@@ -1426,7 +1451,83 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
 
      <img src="https://render.githubusercontent.com/render/math?math=\text{R}=\frac{\text{u}^2%20\cdot%20\sin2\theta}{\text{g}}&mode=inline">
 
-     <br/><br/>
+<details>
+<summary>SOLUTIONS</summary>
+<p>
+
+```matlab
+%%
+clc
+clear
+close all
+
+syms u fi g t
+
+%% Initial Velocity
+ux = u * cos(fi)
+uy = u * sin(fi)
+
+%% Time of Flight
+T = (2 * uy)/g
+
+%% Velocity
+ux = u * cos(fi)
+uy = u * sin(fi) - g * t
+
+%% Pythagorean Theorem
+u = (ux^2 * uy^2) ^ 1/2
+
+%% Displacement
+x = u * t * cos(fi)
+y = u * t * sin(fi) - 1/2 * g * t ^2
+
+dr = sqrt(x^2 + y^2)
+
+%% Parabolic Trajectory
+y = tan(fi) * x - (g/(2*u^2*cos(fi)^2))*(x^2)
+
+%% Maximum Height
+
+h = u^2 * sin(fi)^2
+th = (u*sin(fi)) / g
+
+%% Range
+R = (u^2 * sin(fi))/g
+```
+
+*Output:*
+
+<img src="https://render.githubusercontent.com/render/math?math=ux%20=%20u\,\mathrm{cos}\left(\mathrm{fi}\right)&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=uy%20=%20u\,\mathrm{sin}\left(\mathrm{fi}\right)&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=T%20=%20\frac{2\,u\,\mathrm{sin}\left(\mathrm{fi}\right)}{g}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=ux%20=%20u\,\mathrm{cos}\left(\mathrm{fi}\right)&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=uy%20=%20u\,\mathrm{sin}\left(\mathrm{fi}\right)-g\,t&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=u%20=%20\sqrt{{{\left(\frac{g\,t^2%20}{2}-\frac{t\,u^2%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^2%20\,\mathrm{sin}\left(\mathrm{fi}\right)\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^2%20}{2}\right)}}^2%20+\frac{t^2%20\,u^4%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^6%20\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^4%20}{4}}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=x%20=%20\frac{t\,u^2%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^3%20\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^2%20}{2}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=y%20=%20\frac{t\,u^2%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^2%20\,\mathrm{sin}\left(\mathrm{fi}\right)\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^2%20}{2}-\frac{g\,t^2%20}{2}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=dr%20=%20\sqrt{{{\left(\frac{g\,t^2%20}{2}-\frac{t\,u^2%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^2%20\,\mathrm{sin}\left(\mathrm{fi}\right)\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^2%20}{2}\right)}}^2%20+\frac{t^2%20\,u^4%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^6%20\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^4%20}{4}}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=y%20=%20\frac{t\,u^2%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^3%20\,\mathrm{tan}\left(\mathrm{fi}\right)\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^2%20}{2}-\frac{g\,t^2%20}{2}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=h%20=%20\frac{u^4%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^4%20\,{\mathrm{sin}\left(\mathrm{fi}\right)}^2%20\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^4%20}{4}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=th%20=%20\frac{u^2%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^2%20\,\mathrm{sin}\left(\mathrm{fi}\right)\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^2%20}{2\,g}&mode=inline">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=R%20=%20\frac{u^4%20\,{\mathrm{cos}\left(\mathrm{fi}\right)}^4%20\,\mathrm{sin}\left(\mathrm{fi}\right)\,{{\left(g\,t-u\,\mathrm{sin}\left(\mathrm{fi}\right)\right)}}^4%20}{4\,g}&mode=inline">
+<br/>
+
+</p>
+</details>
+
+<br/>
 
 - Sound velocity in water - [Del Grosso and Mader (1972)](https://www.sciencedirect.com/science/article/abs/pii/S030156299800091X)
 
