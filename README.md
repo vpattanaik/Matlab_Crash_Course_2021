@@ -847,7 +847,8 @@ If your function returns more than one output, enclose the output names in squar
 
 ***Valid function*** and ***variable names*** **must start with a letter, and can contain letters, digits, or underscores**.
 
-:exclamation: Function definitions in a script must appear at the end of the file.
+:exclamation: `Function definitions in a script must appear at the end of the file.`
+
 In case you see the above error, simply *move the function definition to the very end of the script*.
 
 ## Reading-Writing Files
