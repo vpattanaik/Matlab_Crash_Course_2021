@@ -1452,7 +1452,7 @@ Other geographic basemaps avaiable in MATLAB can be found [here](https://se.math
      <img src="https://render.githubusercontent.com/render/math?math=\text{R}=\frac{\text{u}^2%20\cdot%20\sin2\theta}{\text{g}}&mode=inline">
 
 <details>
-<summary>SOLUTIONS</summary>
+<summary>Click here to see the solutions...</summary>
 <p>
 
 ```matlab
