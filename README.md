@@ -590,7 +590,7 @@ To save figures to specific file formats, use the `saveas` function.
 ```matlab
 x = [2 4 7 2 4 5 2 5 1 4]; % Initializes variable `x`
 bar(x); % Plots `x` as bar graph
-saveas(gcf, 'Barchart.png') % Saves the plotted bar graph in `png` format
+saveas(gcf, 'Barchart.png'); % Saves the plotted bar graph in `png` format
 ```
 
 Here `gcf` denotes the current figure i.e., `bar(x)`.
@@ -600,8 +600,19 @@ Alternatively, you can also name the figure like so,
 ```matlab
 x = [2 4 7 2 4 5 2 5 1 4]; % Initializes variable `x`
 fig = bar(x); % Plots `x` as bar graph and names the figure as `fig` 
-saveas(fig, 'Barchart.png') % Saves the plotted bar graph in `png` format
+saveas(fig, 'Barchart.png'); % Saves the plotted bar graph in `png` format
 ```
+
+If you would like to export images at specific resolution (example 300 DPI), try the following code,
+
+```matlab
+x = [2 4 7 2 4 5 2 5 1 4]; % Initializes variable `x`
+fig = figure; % Names the current figure as `fig` 
+bar(x); % Plots `x` as bar graph
+print(fig, 'Barchart', '-dpng', '-r300'); % Saves plotted bar graph in `png` format at 300 DPI
+```
+
+To learn more about the `print` function, checkout [this](https://se.mathworks.com/help/matlab/ref/print.html) link.
 
 ## Conditional Statements
 
