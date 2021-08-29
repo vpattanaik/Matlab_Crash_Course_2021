@@ -1637,5 +1637,6 @@ Also, try out these **MATLAB Examples**:
 
 ## Acknowledgement
 This work has been financed in part through ["Struktuurifondid" Project EITSA20017](https://www.etis.ee/Portal/Projects/Display/cbfab60b-3752-49b5-afe0-86e24a544ec7?lang=ENG).
+
 ![Haridus- ja Noorteamet](/images/Haridus- ja Noorteamet_vapp_est_rgb.jpg)
 ![IT Akadeemia](/images/IT Akadeemia logo  RGB.jpg)
