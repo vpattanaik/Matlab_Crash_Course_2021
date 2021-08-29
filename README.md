@@ -1638,5 +1638,4 @@ Also, try out these **MATLAB Examples**:
 ## Acknowledgements
 This study material has been funded by IT Academia (project [EITSA20017](https://www.etis.ee/Portal/Projects/Display/cbfab60b-3752-49b5-afe0-86e24a544ec7?lang=ENG) "Implementation of ICT-based technical solutions for the specialty-specific courses of the Waterway Safety Management study program).
 
-<img src="./images/Haridus-ja_Noorteamet_vapp_est_rgb.jpg" alt="Haridus- ja Noorteamet" width="300">
-<img src="./images/IT_Akadeemia_logo_rgb.jpg" alt="IT Akadeemia" width="300">
+<img src="./images/Haridus-ja_Noorteamet_vapp_est_rgb.jpg" alt="Haridus- ja Noorteamet" width="300"> <img src="./images/IT_Akadeemia_logo_rgb.jpg" alt="IT Akadeemia" width="300">
